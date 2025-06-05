@@ -8,14 +8,19 @@ import Feedback from './components/Feedback'
 import Hystory from './components/Hystory'
 import Navbar from './components/Navbar'
 import Stastic from './components/Stastic'
+import HeaderCom from './components/HeaderCom'
+import Currpgcontextprovider from './context/currpgcontextprovider'
+
 function App() {
 
   return (
+    
+    <Currpgcontextprovider>
     <div className='flex-row homepg-body'>
       <Router>
         <Navbar />
         <div className="homepg-main-content flex-col">
-          <div className="header flex-row">Home</div>
+          <HeaderCom/>
           <div className="content">
             <Routes>
               <Route path="/" element={
@@ -38,6 +43,7 @@ function App() {
         </div>
       </Router>
     </div>
+    </Currpgcontextprovider>
   )
 }
 
