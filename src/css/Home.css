@@ -1,4 +1,4 @@
-.no-task {
+/* .no-task {
   font-weight: bold;
   color: #555;
   text-align: center;
@@ -7,7 +7,6 @@
   border-radius: 10px;
   user-select: none;
 }
-/* Task Suggestion Card */
 .task-suggestion {
   border: 2px solid #6a0dad;
   border-radius: 10px;
@@ -28,7 +27,6 @@
   height: fit-content;
 }
 
-/* Task Header Info */
 #owner-info {
   display: flex;
   justify-content: space-between;
@@ -44,14 +42,12 @@
   gap: 10px;
 }
 
-/* Owner Details */
 .owner {
   text-align: start;
   color: #0f1035;
   font-weight: 600;
 }
 
-/* Problem Description */
 #Problem-Discription {
   margin: 10px 0;
   overflow: hidden;
@@ -61,14 +57,12 @@
   color: #333;
 }
 
-/* Task Title */
 .title {
   font-size: 1.2rem;
   font-weight: 700;
   color: #0f1035;
 }
 
-/* Avatar Image */
 .task-image img {
   width: 50px;
   height: 50px;
@@ -77,7 +71,6 @@
   border: 2px solid #6a0dad;
 }
 
-/* Toggle Switch */
 .switch {
   position: relative;
   display: inline-block;
@@ -121,8 +114,7 @@ input:checked + .slider:before {
   transform: translateX(24px);
 }
 
-/* Output Element (if any) */
 output {
   margin: 10px;
   font-size: 0.9rem;
-}
+} */

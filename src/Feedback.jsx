@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../css/feedback.css';
+import './css/feedback.css';
 
 export default function Feedback() {
   const taskFeedback = {

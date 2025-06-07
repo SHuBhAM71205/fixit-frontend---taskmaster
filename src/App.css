@@ -1,13 +1,9 @@
-
+/*
 .color-pallet{
     background-color : #eb5a3c;
     background-color : #0F1035;
     background-color : #DCF2F1;
 }
-
-
-
-/* ---------------------------general class---------------------------------------------------------- */
 
 *{
     margin: 0px;
@@ -33,7 +29,6 @@ body{
     flex-direction: column;
 }
 
-/*--------------------------------------------------------component-----------------------------------------------*/
 
 .login-signup{
     background-color: antiquewhite;
@@ -104,7 +99,6 @@ input{
 }
 
 
-/* --------------------------------------homepage--------------------------------------- */
 
 .homepg-body{
     margin: 0px 0px 0px 0px;
@@ -132,8 +126,6 @@ input{
 } 
 
 
-/*  */
-
 .request-form{
   gap: 15px;
   align-items: center;
@@ -141,4 +133,4 @@ input{
   margin: 5vw;
 }
 
-    
+*/

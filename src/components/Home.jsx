@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import '../css/Home.css';
-import '../css/form-style.css';
+// import '../css/Home.css';
+// import '../css/form-style.css';
 
 const backend = import.meta.env.VITE_backend;
 const authToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjg0MDVkOTAzOGEwMzVjYmRhODk0NjYzIn0sImlhdCI6MTc0OTEyMzg4N30._Z5fqxZLmKqRdr3GrVF5VlYqwwbnQfg2X46KxrQ0www';
