@@ -1,30 +1,7 @@
 
 import React, { useEffect, useRef } from 'react';
-import '../css/stats.css';
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  LineElement,
-  PointElement,
-  Title,
-  Tooltip,
-  Legend,
-} from 'chart.js';
-import { Chart } from 'chart.js'; // Needed for instantiating the charts
-import {Bar} from 'react-chartjs-2';
-// Register required components
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  LineElement,
-  PointElement,
-  Title,
-  Tooltip,
-  Legend
-);
+// import '../css/stats.css';
+import {LineChart1,LineChart2} from './Chart/LineChart';
 
 export default function Stastic() {
   const taskChartRef = useRef(null);
@@ -37,133 +14,46 @@ export default function Stastic() {
   const totalRevenue = 1500;
   const averageRevenue = totalRevenue / completedTasks;
 
-  useEffect(() => {
-    const taskCtx = taskChartRef.current.getContext('2d');
-    const revenueCtx = revenueChartRef.current.getContext('2d');
-
-    const taskChart = new Chart(taskCtx, {
-      type: 'bar',
-      data: {
-        labels: ['Completed', 'Pending', 'Rejected'],
-        datasets: [
-          {
-            label: 'Number of Tasks',
-            data: [completedTasks, pendingTasks, rejectedTasks],
-            backgroundColor: ['#28a745', '#ffc107', '#dc3545'],
-          },
-        ],
-      },
-      options: {
-        responsive: true,
-        plugins: {
-          title: {
-            display: true,
-            text: 'Task Status',
-          },
-        },
-        scales: {
-          y: {
-            beginAtZero: true,
-          },
-        },
-      },
-    });
-
-    const revenueChart = new Chart(revenueCtx, {
-      type: 'line',
-      data: {
-        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-        datasets: [
-          {
-            label: 'Monthly Revenue ($)',
-            data: [200, 180, 250, 300, 270, 400, 450, 430, 480, 500, 520, 600],
-            borderColor: '#007bff',
-            backgroundColor: 'rgba(0, 123, 255, 0.3)',
-            fill: true,
-            tension: 0.7,
-          },
-        ],
-      },
-      options: {
-        
-        responsive: true,
-        plugins: {
-          title: {
-            display: true,
-            text: 'Revenue Over Time',
-          },
-        },
-        scales: {
-          y: {
-            beginAtZero: true,
-          },
-        },
-      },
-    });
-
-    return () => {
-      taskChart.destroy();
-      revenueChart.destroy();
-    };
-  }, []);
 
   return (
-    <div className="flex-row stats-cont">
-      <div className="chart">
-        <div className="no-of-task">
-          <canvas ref={taskChartRef} width={700} height={450}></canvas>
+    <div className="p-6 space-y-8">
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="bg-white  rounded-xl shadow-md p-5">
+          <h4 className="text-lg font-semibold text-indigo-700">Total Requests</h4>
+          <p className="text-3xl font-bold text-gray-800">124</p>
         </div>
-        <div className="revenueChart">
-          <canvas ref={revenueChartRef}></canvas>
+
+        <div className="bg-white  rounded-xl shadow-md p-5">
+          <h4 className="text-lg font-semibold text-green-700">Completed Tasks</h4>
+          <p className="text-3xl font-bold text-gray-800">92</p>
+        </div>
+
+        <div className="bg-white  rounded-xl shadow-md p-5">
+          <h4 className="text-lg font-semibold text-red-600">Pending Tasks</h4>
+          <p className="text-3xl font-bold text-gray-800">32</p>
+        </div>
+
+        <div className="bg-white  rounded-xl shadow-md p-5">
+          <h4 className="text-lg font-semibold text-yellow-600">Avg. Completion Time</h4>
+          <p className="text-3xl font-bold text-gray-800">2.3 hrs</p>
         </div>
       </div>
 
-      <div className="stats-card">
-        <h2 className="text-center">TaskMaster Statistics</h2>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
-        <div className="card">
-          <div className="stat-card">
-            <h4>Total Tasks</h4>
-            <p>{totalTasks}</p>
-          </div>
+        <div className="bg-white rounded-xl shadow-md p-5 h-[350px] flex items-center justify-center">
+          <p className="text-gray-400"></p>
+          <LineChart1/>
         </div>
 
-        <div className="card">
-          <div className="stat-card">
-            <h4>Completed</h4>
-            <p>{completedTasks}</p>
-          </div>
-        </div>
 
-        <div className="card">
-          <div className="stat-card">
-            <h4>Pending</h4>
-            <p>{pendingTasks}</p>
-          </div>
-        </div>
-
-        <div className="card">
-          <div className="stat-card">
-            <h4>Rejected</h4>
-            <p>{rejectedTasks}</p>
-          </div>
-        </div>
-
-        <div className="card offset-md-3">
-          <h2>Revenue</h2>
-          <div className="stat-card">
-            <h4>Total Revenue</h4>
-            <p>${totalRevenue}</p>
-          </div>
-        </div>
-
-        <div className="card">
-          <div className="stat-card">
-            <h4>Average Revenue Per Task</h4>
-            <p>${averageRevenue.toFixed(2)}</p>
-          </div>
+        <div className="bg-white rounded-xl shadow-md p-5 h-[350px] flex items-center justify-center">
+          <p className="text-gray-400"></p>
+          <LineChart2/>
         </div>
       </div>
     </div>
+
   );
 }

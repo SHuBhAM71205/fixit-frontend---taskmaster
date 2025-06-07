@@ -35,7 +35,7 @@ const Navbar = ({ userName }) => {
 
        <div
             className={`${isSmall ? 'w-16' : 'w-64'
-                } transition-all duration-300 bg-gradient-to-b from-indigo-500 to-purple-500 min-h-screen text-white p-4 flex flex-col shadow-lg`}
+                } transition-all duration-300 bg-gradient-to-b from-indigo-500 to-purple-500 min-h-screen text-white p-4 flex flex-col shadow- rounded-r-sm`}
         >
             <div className="flex flex-row justify-end mb-6">
                 <button onClick={toggleSidebar} className="text-white text-3xl">

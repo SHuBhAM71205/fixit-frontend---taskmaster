@@ -16,12 +16,12 @@ function App2() {
   return (
     
     <Currpgcontextprovider>
-    <div className='flex flex-row h-screen bg-slate-100'>
-    
+    <div className='flex flex-row h-screen bg-zinc-200'>
+        
         <Navbar />
-        <div className="flex-col h-screen flex-1 overflow-scroll">
+        <div className="flex-col h-screen flex-1 overflow-auto">
           <HeaderCom/>
-          <div className="flex">
+          <div className="">
             <Routes>
               <Route path="/" element={
                 <Home />
